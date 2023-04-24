@@ -14,7 +14,7 @@
     <!-- Styles -->
     <style>
         body {
-            background: #d1684e;
+            background: #DF5A3A;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -56,6 +56,12 @@
 </head>
 
 <body class="antialiased">
+
+
+    <audio id="myAudio">
+        <source src="{{ asset('sounds/start.ogg') }}" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
     <div id="wrap"></div>
     <p class="info">* Mouse or Finger press on the page to finish loading action.</p>
 </body>
@@ -70,8 +76,8 @@
 
         canvassize = 500,
 
-        length = 30,
-        radius = 5.6,
+        length = 60,
+        radius = 7.4,
 
         rotatevalue = 0.035,
         acceleration = 0,
@@ -120,7 +126,7 @@
     group.add(mesh);
 
     ringcover = new THREE.Mesh(new THREE.PlaneGeometry(50, 15, 1), new THREE.MeshBasicMaterial({
-        color: 0xd1684e,
+        color: 0xDF5A3A,
         opacity: 0,
         transparent: true
     }));
@@ -143,7 +149,7 @@
         for (i = 0; i < 10; i++) {
             plain = new THREE.Mesh(new THREE.PlaneGeometry(length * 2 + 1, radius * 3, 1), new THREE
                 .MeshBasicMaterial({
-                    color: 0xd1684e,
+                    color: 0xDF5A3A,
                     transparent: true,
                     opacity: 0.13
                 }));
@@ -157,25 +163,11 @@
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(canvassize, canvassize);
-    renderer.setClearColor('#d1684e');
+    renderer.setClearColor('#DF5A3A');
 
     $wrap.appendChild(renderer.domElement);
 
-    $body.addEventListener('mousedown', start, false);
-    $body.addEventListener('touchstart', start, false);
-    $body.addEventListener('mouseup', back, false);
-    $body.addEventListener('touchend', back, false);
-
     animate();
-
-
-    function start() {
-        toend = true;
-    }
-
-    function back() {
-        toend = false;
-    }
 
     function tilt(percent) {
         group.rotation.y = percent * 0.5;
@@ -212,6 +204,22 @@
         if ((t /= d / 2) < 1) return c / 2 * t * t + b;
         return c / 2 * ((t -= 2) * t * t + 2) + b;
     }
+
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        var x = document.getElementById("myAudio");
+
+
+        x.play();
+
+
+        setTimeout(() => {
+
+            toend = true;
+
+        }, 10900);
+    });
 </script>
 
 </html>
