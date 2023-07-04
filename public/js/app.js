@@ -67,6 +67,7 @@ __webpack_require__(/*! ./sam */ "./resources/js/sam.js");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 var $body = document.body,
   $wrap = document.getElementById('wrap'),
@@ -175,12 +176,19 @@ function easing(t, b, c, d) {
   if ((t /= d / 2) < 1) return c / 2 * t * t + b;
   return c / 2 * ((t -= 2) * t * t + 2) + b;
 }
+
 document.addEventListener("DOMContentLoaded", function (event) {
   var x = document.getElementById("myAudio");
   x.play();
   setTimeout(function () {
     toend = true;
   }, 10900);
+  document.querySelector("#myAudio").addEventListener("ended", function () {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to("#sam", {
+      scale: 0,
+      ease: "power1"
+    });
+  });
 });
 
 /***/ }),

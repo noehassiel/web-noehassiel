@@ -1,3 +1,9 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 .loader {
     background: #DF5A3A;
     -webkit-user-select: none;
@@ -7,7 +13,10 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 100vw;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
 }
 
 #wrap {

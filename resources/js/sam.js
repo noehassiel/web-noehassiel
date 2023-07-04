@@ -1,6 +1,5 @@
 import three from 'three';
 
-
 var $body = document.body,
     $wrap = document.getElementById('wrap'),
 
@@ -138,6 +137,8 @@ function easing(t, b, c, d) {
     return c / 2 * ((t -= 2) * t * t + 2) + b;
 }
 
+import { gsap } from 'gsap';
+
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -150,7 +151,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
 
         toend = true;
-
     }, 10900);
-});
 
+    document.querySelector("#myAudio").addEventListener("ended", () => {
+
+        gsap.to("#sam", {
+            scale: 0,
+            ease: "power1"
+        });
+
+    });
+});

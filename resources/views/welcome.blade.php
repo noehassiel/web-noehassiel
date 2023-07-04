@@ -14,60 +14,14 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!-- Styles -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0:
-        }
 
-        .loader {
-            background: #DF5A3A;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-        }
-
-        #wrap {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            overflow: hidden;
-        }
-
-        #wrap canvas {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 500px;
-            height: 500px;
-            margin: -250px 0 0 -250px;
-            -outline: 1px solid #fff;
-        }
-
-        .info {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            font-size: 12px;
-            color: #ccc;
-            line-height: 2em;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body class="antialiased">
 
     @include('partials.sam')
+
+    <h1>hello</h1>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
 
