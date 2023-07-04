@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -45,6 +44,8 @@
               ],
               "outputHashing": "all"
             },
+            "outputPath": "../../../public/assets/angular",
+            "deployUrl": "/assets/angular/",
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -52,6 +53,10 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "dev": {
+              "outputPath": "dist/assets/angular",
+              "baseHref": "/assets/angular/"
             }
           },
           "defaultConfiguration": "production"
@@ -64,6 +69,9 @@
             },
             "development": {
               "browserTarget": "angular:build:development"
+            },
+            "dev": {
+              "browserTarget": "angular:build:dev"
             }
           },
           "defaultConfiguration": "development"
