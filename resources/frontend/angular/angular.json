@@ -30,6 +30,8 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "../../../public/assets/angular",
+              "deployUrl": "/assets/angular/",
               "budgets": [
                 {
                   "type": "initial",
@@ -44,8 +46,6 @@
               ],
               "outputHashing": "all"
             },
-            "outputPath": "../../../public/assets/angular",
-            "deployUrl": "/assets/angular/",
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -102,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4157ce6c-3579-4cfc-8283-d2c01e7ea422"
   }
 }
