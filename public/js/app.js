@@ -112,7 +112,7 @@ mesh = new THREE.Mesh(new THREE.TubeGeometry(new (THREE.Curve.create(function ()
 
 group.add(mesh);
 ringcover = new THREE.Mesh(new THREE.PlaneGeometry(50, 15, 1), new THREE.MeshBasicMaterial({
-  color: 0xDF5A3A,
+  color: 0xC4123D,
   opacity: 0,
   transparent: true
 }));
@@ -133,7 +133,7 @@ group.add(ring);
   var plain, i;
   for (i = 0; i < 10; i++) {
     plain = new THREE.Mesh(new THREE.PlaneGeometry(length * 2 + 1, radius * 3, 1), new THREE.MeshBasicMaterial({
-      color: 0xDF5A3A,
+      color: 0xC4123D,
       transparent: true,
       opacity: 0.13
     }));
@@ -146,7 +146,7 @@ renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(canvassize, canvassize);
-renderer.setClearColor('#DF5A3A');
+renderer.setClearColor('#C4123D');
 $wrap.appendChild(renderer.domElement);
 animate();
 function tilt(percent) {
